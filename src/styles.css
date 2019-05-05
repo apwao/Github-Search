@@ -4,5 +4,8 @@ body{
     background-image: url(https://www.pexels.com/photo/person-holding-magnifying-glass-712786/);
     max-width: 100%;
     height: auto;
+    font-family: 'Cookie', cursive;
+    font-size: 30px;
+    background-color:rgb(200, 226, 200);
 }
 
