@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '/src/environments/environment';
+import { environment } from 'src/environments/environment';
 import {Repo} from '../repo';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class UserInfoService {
 
   }
 
-  userDetailsRequest(){
+  userDetailsRequest(i){
 
     interface SortUserDetails{
       login: string;
@@ -27,8 +27,15 @@ export class UserInfoService {
       public_repos: number;
       name : string;
     }
+
+
+    var nameTest = i
+    var finalUrl = environment.userApi1Url + nameTest + environment.userApi2Url
+    console.log(finalUrl);
+
+
     let promise = new Promise((resolve,reject)=>{
-      this.http.get<SortUserDetails>(environment.userApiUrl).toPromise().then(response=>{
+      this.http.get<SortUserDetails>(finalUrl).toPromise().then(response=>{
         
         this.userDetails.userName=response.login;
         this.userDetails.briefDescription= response.bio;
@@ -59,14 +66,14 @@ export class UserInfoService {
   }
 
 
-  otherUsersDetailsRequest(){
+  RepoDetailsRequest(){
 
-    interface SortOtherUserDetails{
+    interface SortRepoDetails{
       name: string;
       description: string;
     }
     let promise = new Promise((resolve,reject)=>{
-      this.http.get<SortOtherUserDetails>(environment.userApiUrl).toPromise().then(response=>{
+      this.http.get<SortRepoDetails>(environment.userApiUrl).toPromise().then(response=>{
         
         this.userRepos.repoName=response.name;
         this.userRepos.description= response.description;

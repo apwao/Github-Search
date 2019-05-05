@@ -3,8 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false;
-  userApiUrl:"https://api.github.com/users/apwao?access_token=4cb35c19a85fa8aec12c3bf35414893c722233f3"
+  production: false,
+  userApiUrl:"https://api.github.com/users/apwao?access_token=4cb35c19a85fa8aec12c3bf35414893c722233f3",
+  userApi1Url: "https://api.github.com/users/",
+  userApi2Url: "?acess_token=4cb35c19a85fa8aec12c3bf35414893c722233f3"
 };
 
 /*
