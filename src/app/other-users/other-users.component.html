@@ -1,3 +1,14 @@
-<p>
-  other-users works!
-</p>
+<div>
+  <input type="text" placeholder="search by username or repository name" [(ngModel)]="userNameInput" >
+  <button type="button"(click)='getUserInfo()'>Click me</button>
+</div>
+
+
+<img src="{{userFinalDetails.image}}">
+<p>Username:{{userFinalDetails.userName}}</p>
+<p>Fullname:{{userFinalDetails.fullName}}</p>
+<p>Bio:{{userFinalDetails.briefDescription}}</p>
+<p>Public Repos: {{userFinalDetails.myPublicRepos}}</p>
+<p>Repo Name:{{userFinalRepoDetails.repoName}}</p>
+<p>Repo Description: {{userFinalDetails.description}}</p>
+
