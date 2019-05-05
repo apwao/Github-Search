@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+    background-image: url(https://www.pexels.com/photo/person-holding-magnifying-glass-712786/);
+    max-width: 100%;
+    height: auto;
+}
+
