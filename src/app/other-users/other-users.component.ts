@@ -10,10 +10,12 @@ import {UserInfoService} from '../user-http/user-info.service';
 export class OtherUsersComponent implements OnInit {
   userNameInput: string = "Apwao";
   userFinalDetails;
+  userFinalRepoDetails;
    getUserInfo(apwao){
-    // alert(this.userNameInput)
      this.userInfoService.userDetailsRequest(this.userNameInput);
       this.userFinalDetails=this.userInfoService.userDetails
+      this.userInfoService.RepoDetailsRequest(this.userNameInput);
+      this.userFinalRepoDetails=this.userInfoService.userRepos;
 
    }
 
