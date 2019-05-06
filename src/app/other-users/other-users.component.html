@@ -1,20 +1,24 @@
-<div class="jumbotron" id="title">
-  <h1 id="header">Git_Search</h1>
-</div>
+<p></p>
 <div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2">
-      <p id="label">Username/Reponame:</p>
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+        <p id="label">Username:</p>
+    </div>
+    <div class="col-md-2">
+      <input class="form-control-lg" type="text" placeholder="username" [(ngModel)]="userNameInput" >
+    </div>
+    <div class="col-md-2">
+        <a routerLink="/other_users"><button class="btn btn-lg btn-success" type="button" (click)='getUserInfo()'>Search</button></a>
+      </div>
+      <div class="col-md-1" style="margin-right:44px;">
+          <a routerLink="/user"><button class="btn btn-lg btn-success" type="button">Home</button></a>
+      </div>
+  
+    
   </div>
-  <div class="col-md-2">
-    <input class="form-control-lg" type="text" placeholder="username or reponame" [(ngModel)]="userNameInput" >
-  </div>
-  <div class="col-md-3">
-    <button class="btn btn-lg btn-success" type="button"(click)='getUserInfo(i)'>Search</button>
-  </div>
-</div>
-<br>
-<br>
+
+
+
 
 <div class="row">
   <div class="col-md-3"></div>
@@ -34,13 +38,13 @@
 
 
 <div *ngFor='let repo of userInfoService.repo; let i = index;'>
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <div class="panel-title">Repo Name:{{userInfoService.repo[i].name}}</div>
-    </div>
-    <div>
-      <p>userInfoService.repo[i].description</p>
-    </div>
-  </div>
+  <div>Repo Name:{{userInfoService.repo[i].name}}</div>
+    <p>{{userInfoService.repo[i].description}}</p>
+    <p>{{userInfoService.repo[i].html_url}}</p>
+    <p>{{userInfoService.repo[i].created_at}}</p>
+    <p>{{userInfoService.repo[i].updated_at}}</p>
+    <p>{{userInfoService.repo[i].homepage}}</p>
+    <p>{{userInfoService.repo[i].license}}</p>
+    <p>{{userInfoService.repo[i].forks}}</p>
 </div>
 
