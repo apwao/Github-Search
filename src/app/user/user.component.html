@@ -20,14 +20,14 @@
     <hr>
   </div>
 </div>
-<div>
-    <ul *ngFor='let repo of userInfoService.repo; let i = index;'>
-      <li>Repo Name:{{userInfoService.repo[i].name}}</li>
-      <li>{{userInfoService.repo[i].description}}</li>
-      <li>{{userInfoService.repo[i].created_at}}</li>
-      <li>{{userInfoService.repo[i].updated_at}}</li>
-      <li>{{userInfoService.repo[i].homepage}}</li>
-      <li>{{userInfoService.repo[i].license}}</li>
-      <li>{{userInfoService.repo[i].forks}}</li>
-    </ul>
+<div id="repos" *ngFor='let repo of userInfoService.repo; let i = index;'>
+  <div class="polaroid">
+    <p>Repo Name:{{userInfoService.repo[i].name}}</p>
+    <p>{{userInfoService.repo[i].description}}</p>
+    <p>{{userInfoService.repo[i].created_at}}</p>
+    <p>{{userInfoService.repo[i].updated_at}}</p>
+    <p>{{userInfoService.repo[i].homepage}}</p>
+    <p>{{userInfoService.repo[i].license}}</p>
+    <p>{{userInfoService.repo[i].forks}}</p>
+  </div>
 </div>

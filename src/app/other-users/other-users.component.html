@@ -29,7 +29,7 @@
   </div>
 </div>
 <div *ngFor='let repo of userInfoService.repo; let i = index;'>
-  <div>Repo Name:{{userInfoService.repo[i].name}}</div>
+  <div class="polaroid">Repo Name:{{userInfoService.repo[i].name}}</div>
     <p>{{userInfoService.repo[i].description}}</p>
     <p>{{userInfoService.repo[i].html_url}}</p>
     <p>{{userInfoService.repo[i].created_at}}</p>
