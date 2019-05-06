@@ -8,14 +8,17 @@ import {UserInfoService} from '../user-http/user-info.service';
   providers: [UserInfoService]
 })
 export class OtherUsersComponent implements OnInit {
-  userNameInput: string = "Apwao";
+  userNameInput: string;
   userFinalDetails;
   userFinalRepoDetails;
-   getUserInfo(apwao){
-     this.userInfoService.userDetailsRequest(this.userNameInput);
-      this.userFinalDetails=this.userInfoService.userDetails
-      this.userInfoService.RepoDetailsRequest(this.userNameInput);
-      this.userFinalRepoDetails=this.userInfoService.userRepos;
+
+   getUserInfo(){
+      this.userInfoService.userDetailsRequest(this.userNameInput);
+      this.userFinalDetails=this.userInfoService.userDetails;
+      this.userInfoService.userDetailsRequest(this.userNameInput);
+      //this.userFinalRepoDetails=this.userInfoService.userRepos;
+      this.userInfoService.otherUsersRepo(this.userNameInput);
+
 
    }
 
