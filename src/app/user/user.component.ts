@@ -10,15 +10,16 @@ import { Repo } from '../repo';
   providers: [UserInfoService]
 })
 export class UserComponent implements OnInit {
+   myFinalDetails:User;
   
-  userFinalDetails:User;
-  userFinalRepoDetails: Repo;
-
   constructor(public userInfoService:UserInfoService) { }
 
   ngOnInit() {
-    // this.userInfoService.userDetailsRequest();
-    // this.userFinalDetails = this.userInfoService.userDetails;
+   
+    this.userInfoService.myUserDetailsRequest();
+    this.myFinalDetails = this.userInfoService.myUserDetails;
+    this.userInfoService.myRepoRequest()
+    
   }
 
 }
