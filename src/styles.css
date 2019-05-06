@@ -1,11 +1,22 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body{
-    background-image: url(https://www.pexels.com/photo/person-holding-magnifying-glass-712786/);
+    background-image: url();
     max-width: 100%;
     height: auto;
     font-family: 'Cookie', cursive;
     font-size: 30px;
     background-color:rgb(200, 226, 200);
 }
+div.polaroid {
+    width: 100%;
+    background-color: rgb(11, 48, 11);
+    opacity: 5;
+    box-shadow: 0 4px 8px 0 rgba(4, 4, 50, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    align-content: center;
+    border-radius: 7px;
+    color: rgb(200, 226, 200);
+    
+  }
 
