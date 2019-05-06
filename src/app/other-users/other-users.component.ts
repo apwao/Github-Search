@@ -16,14 +16,9 @@ export class OtherUsersComponent implements OnInit {
       this.userInfoService.userDetailsRequest(this.userNameInput);
       this.userFinalDetails=this.userInfoService.userDetails;
       this.userInfoService.userDetailsRequest(this.userNameInput);
-      //this.userFinalRepoDetails=this.userInfoService.userRepos;
       this.userInfoService.otherUsersRepo(this.userNameInput);
-
-
    }
-
   constructor(public userInfoService:UserInfoService) { }
-
   ngOnInit() {
   }
 

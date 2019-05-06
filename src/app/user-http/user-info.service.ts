@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import {Repo} from '../repo';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +9,11 @@ import {Repo} from '../repo';
 export class UserInfoService {
   userDetails: User;
   myUserDetails: User;
-  //userRepos: Repo;
   repo;
-  
-
   constructor(public http:HttpClient) { 
     this.userDetails=new User("","","","",0,"");
     this.myUserDetails = new User("","","","",0,"");
-    //this.userRepos=new Repo("","");
-
   }
-
-  
   myUserDetailsRequest(){
 
       interface SortUserDetails{
@@ -32,9 +24,6 @@ export class UserInfoService {
         public_repos: number;
         name : string;
       }
-  
-  
-  
       let promise = new Promise((resolve,reject)=>{
         this.http.get<SortUserDetails>(environment.myApiUrl).toPromise().then(response=>{
           
@@ -62,13 +51,7 @@ export class UserInfoService {
       })
   
         return promise;
-  
-  
     }
-     
-
-
-
   userDetailsRequest(j){
 
     interface SortUserDetails{
@@ -111,10 +94,7 @@ export class UserInfoService {
       }
       )
     })
-
       return promise;
-
-
   }
    
 myRepoRequest(){
@@ -129,9 +109,6 @@ myRepoRequest(){
       license: any;
       forks: number;
     }
-    //  var nameInput;
-    //  var finalrepoUrl = environment.otherRepoApi1Url + nameInput + environment.otherRepoApi2Url
-
 
     let promise = new Promise((resolve,reject)=>{
       this.http.get<sortMyRepoDetails>(environment.myRepoApiUrl).toPromise().then(response=>{
@@ -175,47 +152,6 @@ myRepoRequest(){
       })
       return promise
     }
-  
-
-  //   userDetailsRequest(){
-  //     interface sortUserDetails{
-  //       login: string;
-  //       bio:string;
-  //       avatar_url: string;
-  //       repos_url: string;
-  //       public_repos: number;
-  //       name: string;
-  //     }
-      
-  //     let promise = new Promise((resolve, reject)=>{
-  //       this.http.get<sortUserDetails>(environment.myApiUrl).toPromise().then(response=> {
-  //         this.userDetails.userName = response.login;
-  //         this.userDetails.briefDescription = response.bio;
-  //         this.userDetails.image = response.avatar_url;
-  //         this.userDetails.myReposUrl = response.repos_url;
-  //         this.userDetails.myPublicRepos = response.public_repos;
-  //         this.userDetails.fullName = response.name;
-  
-  //         resolve()
-  //       },
-  //        error=>{
-  //          this.userDetails.userName = "";
-  //         this.userDetails.briefDescription = "";
-  //         this.userDetails.image = "";
-  //         this.userDetails.myReposUrl = "";
-  //         this.userDetails.myPublicRepos = 0;
-  //         this.userDetails.fullName = "";
-  //         reject(error);
-  //        }
-  //       )
-  //     })
-  //     return promise;
-  //   }
-    
-  // }
-
-
-
  }
 
 

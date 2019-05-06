@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfoService } from '../user-http/user-info.service';
 import { User } from '../user';
-import { Repo } from '../repo';
 
 @Component({
   selector: 'app-user',

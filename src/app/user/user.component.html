@@ -1,8 +1,6 @@
 <div class="jumbotron" id="title">
   <h1 id="header">Git_Search</h1>
 </div>
-  
-
 <div class="col-md-3">
   <a routerLink="/other_users"><button class="btn btn-lg btn-success" type="button">Search Other Users</button></a>     
 </div>
@@ -22,8 +20,6 @@
     <hr>
   </div>
 </div>
-  
-  
 <div>
     <ul *ngFor='let repo of userInfoService.repo; let i = index;'>
       <li>Repo Name:{{userInfoService.repo[i].name}}</li>
@@ -35,17 +31,3 @@
       <li>{{userInfoService.repo[i].forks}}</li>
     </ul>
 </div>
-
-
-
-  <!-- <div class="card" style="width: 18rem; *ngFor='let repo of userInfoService.repo; let i = index;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-   -->
-
-<!-- <router-outlet></router-outlet> -->
